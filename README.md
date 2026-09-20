@@ -51,4 +51,4 @@ Bump `metadata.version` in `.claude-plugin/marketplace.json` and push to `main`.
 
 For Claude.ai, grab the `.skill` file from the release assets and upload it (there's no auto-update path there).
 
-**Repo setup**: `tag-version.yml` pushes the tag with a PAT stored in the `RELEASE_TOKEN` secret, not the default `GITHUB_TOKEN` — tags pushed with the default token don't trigger other workflows, so `release.yml`'s tag-push trigger wouldn't fire. Add a PAT (fine-grained, `Contents: Read and write` on this repo) as a repository secret named `RELEASE_TOKEN`.
+**No repo setup needed** — both workflows run on the default `GITHUB_TOKEN`. `tag-version.yml` pushes the tag with it, then explicitly dispatches `release.yml` via the API rather than relying on its `push: tags` trigger (events from `GITHUB_TOKEN`, like that tag push, never start another workflow run — but `workflow_dispatch` is exempt from that restriction, so the explicit dispatch call still fires it).
