@@ -1,0 +1,47 @@
+{
+  "name": "go-skillset",
+  "owner": {
+    "name": "Your Name"
+  },
+  "metadata": {
+    "description": "Go development conventions: language/deps, web, CLI, architecture & docs, git workflow, observability, CI.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "go-conventions",
+      "source": "./plugins/go-conventions",
+      "description": "Core Go development conventions covering language choice and dependency policy. Use Go as the implementation language for new software. Prefer the Go standard library over third-party dependencies whenever it offers equivalent functionality, and prefer actively maintained packages over implementing functionality from scratch when a dependency is warranted. Always apply this whenever writing, planning, reviewing, or refactoring Go code, or whenever deciding whether to add a dependency versus using stdlib or writing custom code."
+    },
+    {
+      "name": "go-web-interfaces",
+      "source": "./plugins/go-web-interfaces",
+      "description": "Stack conventions for building Go web interfaces and web services with a UI. Default to templ for server-side templating, a CSS framework such as Tailwind CSS for styling, and air for live reload during local development. Always apply this whenever building, scaffolding, or modifying a Go web application, an HTTP handler that renders a UI, or a web frontend \u2014 even if the user just says \"build a web page/dashboard/UI\" without naming a stack."
+    },
+    {
+      "name": "go-cli-interfaces",
+      "source": "./plugins/go-cli-interfaces",
+      "description": "Stack conventions for building Go command-line tools. Default to kong for CLI argument parsing, YAML as the preferred config file format loaded via kong's config-loader support, mango-kong for man page generation, github.com/miekg/king for shell completions, and honoring the XDG Base Directory Specification for config/data/cache file locations. Always apply this whenever building, scaffolding, or modifying a Go CLI tool \u2014 even if the user just says \"build a CLI/command-line tool\" without naming a stack."
+    },
+    {
+      "name": "architecture-and-documentation",
+      "source": "./plugins/architecture-and-documentation",
+      "description": "Architecture decision recording and documentation-style conventions for any software project. Record architectural decisions as Architectural Decision Records (ADRs) following https://adr.github.io/, keep all writing (ADRs, extended docs, commit messages, issues, PR descriptions) concise but sufficient for humans to understand, and put extended architecture and user documentation in a docs/ folder. Always apply this whenever making or discussing an architectural decision, writing or updating project documentation, or drafting a commit message, issue, or pull request description."
+    },
+    {
+      "name": "git-workflow",
+      "source": "./plugins/git-workflow",
+      "description": "Git and GitHub workflow conventions covering commit message style, issue and PR writing style, worktree usage, branching, and Claude attribution. Use conventional commits, write compact issues/PRs that transport all necessary information, prefer git worktrees over switching branches in the current working directory, use feature branches with pull requests, and ask the user once at the start of a project whether Claude attribution should be added to commits/issues/PRs. Always apply this whenever committing, branching, opening an issue or pull request, or starting new feature work in a git repository."
+    },
+    {
+      "name": "service-observability",
+      "source": "./plugins/service-observability",
+      "description": "Reliability and observability conventions for any service that runs as a long-lived server (APIs, web services, background daemons, etc.). Always implement liveness and readiness probes, and instrument the service with metrics using OpenTelemetry (OTEL), exported to an OTEL collector or Prometheus. Always apply this whenever building, scaffolding, or modifying a service that runs continuously as a server/daemon rather than a one-shot CLI."
+    },
+    {
+      "name": "github-ci",
+      "source": "./plugins/github-ci",
+      "description": "CI/CD conventions for repositories hosted on GitHub, with Go-specific tooling. Use GitHub Actions for CI and other workflows, always pin actions to their latest available version, provide a Renovate configuration for automatically updating dependencies, Docker images, and workflow actions, run tests plus govulncheck and gosec security scans as PR checks with code coverage enforced above 75%, and sign images and binaries with cosign using keyless signing where possible. Always apply this whenever setting up CI, writing or updating GitHub Actions workflows, or preparing a Go project for release."
+    }
+  ]
+}

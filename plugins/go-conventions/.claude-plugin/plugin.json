@@ -1,0 +1,5 @@
+{
+  "name": "go-conventions",
+  "description": "Core Go development conventions covering language choice and dependency policy. Use Go as the implementation language for new software. Prefer the Go standard library over third-party dependencies whenever it offers equivalent functionality, and prefer actively maintained packages over implementing functionality from scratch when a dependency is warranted. Always apply this whenever writing, planning, reviewing, or refactoring Go code, or whenever deciding whether to add a dependency versus using stdlib or writing custom code.",
+  "version": "1.0.0"
+}

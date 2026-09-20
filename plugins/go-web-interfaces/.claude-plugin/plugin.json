@@ -1,0 +1,5 @@
+{
+  "name": "go-web-interfaces",
+  "description": "Stack conventions for building Go web interfaces and web services with a UI. Default to templ for server-side templating, a CSS framework such as Tailwind CSS for styling, and air for live reload during local development. Always apply this whenever building, scaffolding, or modifying a Go web application, an HTTP handler that renders a UI, or a web frontend \u2014 even if the user just says \"build a web page/dashboard/UI\" without naming a stack.",
+  "version": "1.0.0"
+}

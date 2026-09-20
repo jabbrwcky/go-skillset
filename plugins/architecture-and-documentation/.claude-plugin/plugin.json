@@ -1,0 +1,5 @@
+{
+  "name": "architecture-and-documentation",
+  "description": "Architecture decision recording and documentation-style conventions for any software project. Record architectural decisions as Architectural Decision Records (ADRs) following https://adr.github.io/, keep all writing (ADRs, extended docs, commit messages, issues, PR descriptions) concise but sufficient for humans to understand, and put extended architecture and user documentation in a docs/ folder. Always apply this whenever making or discussing an architectural decision, writing or updating project documentation, or drafting a commit message, issue, or pull request description.",
+  "version": "1.0.0"
+}

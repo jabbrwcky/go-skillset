@@ -1,0 +1,5 @@
+{
+  "name": "service-observability",
+  "description": "Reliability and observability conventions for any service that runs as a long-lived server (APIs, web services, background daemons, etc.). Always implement liveness and readiness probes, and instrument the service with metrics using OpenTelemetry (OTEL), exported to an OTEL collector or Prometheus. Always apply this whenever building, scaffolding, or modifying a service that runs continuously as a server/daemon rather than a one-shot CLI.",
+  "version": "1.0.0"
+}

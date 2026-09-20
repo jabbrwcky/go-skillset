@@ -1,0 +1,5 @@
+{
+  "name": "git-workflow",
+  "description": "Git and GitHub workflow conventions covering commit message style, issue and PR writing style, worktree usage, branching, and Claude attribution. Use conventional commits, write compact issues/PRs that transport all necessary information, prefer git worktrees over switching branches in the current working directory, use feature branches with pull requests, and ask the user once at the start of a project whether Claude attribution should be added to commits/issues/PRs. Always apply this whenever committing, branching, opening an issue or pull request, or starting new feature work in a git repository.",
+  "version": "1.0.0"
+}

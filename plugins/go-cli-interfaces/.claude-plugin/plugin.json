@@ -1,0 +1,5 @@
+{
+  "name": "go-cli-interfaces",
+  "description": "Stack conventions for building Go command-line tools. Default to kong for CLI argument parsing, YAML as the preferred config file format loaded via kong's config-loader support, mango-kong for man page generation, github.com/miekg/king for shell completions, and honoring the XDG Base Directory Specification for config/data/cache file locations. Always apply this whenever building, scaffolding, or modifying a Go CLI tool \u2014 even if the user just says \"build a CLI/command-line tool\" without naming a stack.",
+  "version": "1.0.0"
+}
