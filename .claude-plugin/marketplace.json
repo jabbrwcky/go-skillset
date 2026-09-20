@@ -1,7 +1,7 @@
 {
   "name": "go-skillset",
   "owner": {
-    "name": "Your Name"
+    "name": "Jens Hausherr"
   },
   "metadata": {
     "description": "Go development conventions: language/deps, web, CLI, architecture & docs, git workflow, observability, CI.",

@@ -21,7 +21,7 @@ Skills don't sync between Claude Code and Claude.ai, so there are two separate i
    ```
    /plugin marketplace add <your-username>/go-skillset
    ```
-   (For local testing before pushing: `/plugin marketplace add ./go-skillset-marketplace`)
+   (For local testing before pushing: `/plugin marketplace add ./go-skillset`)
 3. Install whichever skills you want — each is its own plugin, so you can pick a subset:
    ```
    /plugin install go-conventions@go-skillset
