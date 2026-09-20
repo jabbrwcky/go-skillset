@@ -40,4 +40,15 @@ Claude.ai has no public marketplace — skills are uploaded as a zip per account
 
 ## Updating a skill
 
-Edit the relevant `plugins/<name>/skills/<name>/SKILL.md`, bump the `version` in that plugin's `plugin.json`, commit and push. Claude Code picks up updates the next time someone reinstalls or the marketplace is refreshed. For Claude.ai, re-zip the folder and re-upload (there's no auto-update path there).
+Edit the relevant `plugins/<name>/skills/<name>/SKILL.md`, bump the `version` in that plugin's `plugin.json`, commit and push. Claude Code picks up updates the next time someone reinstalls or the marketplace is refreshed.
+
+## Releasing
+
+Bump `metadata.version` in `.claude-plugin/marketplace.json` and push to `main`. CI takes it from there:
+
+1. `tag-version.yml` detects the version change and pushes a `v<version>` tag.
+2. `release.yml` runs on that tag push, rebuilds every `claude-ai-skills/*.skill` archive from the current `plugins/*/skills/*/SKILL.md` sources, and publishes a GitHub Release with those files attached and a changelog compiled from the conventional commits since the last tag.
+
+For Claude.ai, grab the `.skill` file from the release assets and upload it (there's no auto-update path there).
+
+**Repo setup**: `tag-version.yml` pushes the tag with a PAT stored in the `RELEASE_TOKEN` secret, not the default `GITHUB_TOKEN` — tags pushed with the default token don't trigger other workflows, so `release.yml`'s tag-push trigger wouldn't fire. Add a PAT (fine-grained, `Contents: Read and write` on this repo) as a repository secret named `RELEASE_TOKEN`.
