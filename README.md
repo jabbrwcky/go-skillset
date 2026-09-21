@@ -19,7 +19,7 @@ Skills don't sync between Claude Code and Claude.ai, so there are two separate i
 1. Push this repository to GitHub (or any git host).
 2. Register the marketplace:
    ```
-   /plugin marketplace add <your-username>/go-skillset
+   /plugin marketplace add jabbrwcky/go-skillset
    ```
    (For local testing before pushing: `/plugin marketplace add ./go-skillset`)
 3. Install whichever skills you want — each is its own plugin, so you can pick a subset:
